@@ -45,6 +45,25 @@ The function will be given a class_size by number of students, odds, and Number_
 
 # What are the fair odds? Use manipulation of odds in the function to tune Brownlows earnings to zero. 
 
+To determine fair odds, we are going to hire 1000 Brownlows to repeat the actions of the "real" Brownlow.
+```{r}
+Substitute <- numeric(length = 1000)
+
+for (j in 1:1000) {
+Substitute[j] = BrLw(odds = 4.38)
+}
+```
+
+```{r}
+hist(Substitute)
+```
+
+
+```{r}
+mean(Substitute)
+sd(Substitute)
+```
+By creating these copycat Brownlows, and gathering data on the mean and standard deviation of their samples, we were able to find a reasonable interval centered at the fairest odds ("fair odds" imply the profit is zero).  The "fair odd" value was found to be 4.38, meaning that, if Brownlow were to wager $4.38 for every $1 given, there would be a profit of essentially zero.
 
 <!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
 
