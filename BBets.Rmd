@@ -111,7 +111,7 @@ In running our simulations, it's become clear that a class size between 28 and 2
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
 
-
+For this write-up, we were tasked with creating a function that would simulate the conditions for Brownlow's Bet, including managing a class size, the amount bet, and the number of simulations generated.  For our first assignment, we were to simulate the Brownlow's Bet function 40 times, and find the average monetary yield each time (the mean).  Additionally, we calculated the standard deviation from the mean of these simulations for each run, and, adapting those values (along with the Central Limit Theorem as our justification), we were able to generate a 95% confidence interval.  To find the "fair odds" value, we tested the Brownlow's Bets model until we arrived at a value (4.38:1) that leveled out our histogram at zero.  Finally, we found the optimal class size (as an integer) that would satisfy the 2:1 bet that Brownlow took on per run..  Again adapting our histogram to test for this, we found that 28 students best validated the 2:1 bet inherent in the system.
 
 
 
