@@ -15,6 +15,7 @@ require(tidyverse)
 require(tigerstats)
 require(knitr)
 source(file="BrLw.R")
+options(digits=2)
 ```
 
 
@@ -51,7 +52,7 @@ Substitute[j] = BrLw(odds = 2)
 ```{r}
 mean(Substitute)
 ```
-The average earnings, if 40 Brownlows were hired to play the game the exact same way, would be about $286.9.
+The average earnings, if 40 Brownlows were hired to play the game the exact same way, would be about `r mean(Substitute)` .
 
 
 ## the standard deviation and a 95% confidence interval for their earnings?
@@ -59,6 +60,7 @@ The average earnings, if 40 Brownlows were hired to play the game the exact same
 ```{r}
 sd(Substitute)
 ```
+The standard deviation if 40 Brownlows were hired would be around `r sd(Substitute)`; if we consider the Central Limit Theorem, this would mean that a 95% confidence interval for the data would be within 2 standard deviations of the data, on both sides.  Thus, the 95% confidence interval ranges from `r mean(Substitute) - 2*sd(Substitute)` to `r mean(Substitute) + 2*sd(Substitute)` .
   
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlows winnings (or losings)-->
 
@@ -67,19 +69,19 @@ sd(Substitute)
 
 To determine fair odds, we are going to hire 1000 Brownlows to repeat the actions of the "real" Brownlow.
 ```{r}
-Substitute <- numeric(length = 1000)
+Fair <- numeric(length = 1000)
 
 for (j in 1:1000) {
-Substitute[j] = BrLw(odds = 4.38)
+Fair[j] = BrLw(odds = 4.38)
 }
 ```
 
 ```{r}
-hist(Substitute)
+hist(Fair)
 ```
 
 
-By creating these copycat Brownlows, and gathering data on the mean and standard deviation of their samples, we were able to find a reasonable interval centered at the fairest odds ("fair odds" imply the profit is zero).  The "fair odd" value was found to be 4.38, meaning that, if Brownlow were to wager $4.38 for every $1 given, there would be a profit of essentially zero.
+We were able to find a reasonable interval centered at the fairest odds ("fair odds" imply the profit is zero), by testing with and generating an excess of Brownlow models.  The "fair odd" value was found to be 4.38, meaning that, if Brownlow were to wager $4.38 for every $1 given, there would be a profit of essentially zero.
 
 <!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
 
@@ -108,4 +110,9 @@ In running our simulations, it's become clear that a class size between 28 and 2
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
+
+
+
+
+
 
