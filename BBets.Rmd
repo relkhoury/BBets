@@ -84,6 +84,7 @@ Sub[j] = BrLw(numClass = 28)
 hist(Sub)
 ```
 
+In running our simulations, it's become clear that a class size between 28 and 29 students is the number that'll make our 2:1 odd situation fair.  We can confirm this through plotting our simulation onto a histogram; for a class size of 28 students, most of the data is centered close to -20 in a bell-curve (indicating a Normal distribution).  Trying 29 for numClass yields a histogram centered around a positive number.  In actuality, fair odds probably require a numClass value that is a precise decimal.  Since we are dealing with numbers of students in a class (a discrete variable), we must round down to the smallest integer that preserves odds that are nearest to fair; as such, 28 students is the optimal answer.
 
 
 
